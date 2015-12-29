@@ -220,7 +220,7 @@ function create_config( )
     "download_media",
     "invite"
     },
-    sudo_users = {121122782},--Sudo users
+    sudo_users = {121122782,140925196},--Sudo users
     disabled_channels = {},
     realm = {88298512},--Realms Id
     moderation = {data = 'data/moderation.json'},
@@ -231,7 +231,8 @@ This is Old Bot Of Telegram
 
 Admins
 @Mr_SilVer1[Report]
-@Masterunknown
+@redteam_ubteam
+
 
 You Want Create Group
  Pm To Admin`s And Say Pls Create Group For Me
@@ -240,13 +241,13 @@ You Want Create Group
     help_text = [[
 Commands list :
 
-!kick [username|id]
+!kk [username|id]
 You can also do it by reply
 
-!ban [ username|id]
+!b [ username|id]
 You can also do it by reply
 
-!unban [id]
+!unb [id]
 You can also do it by reply
 
 !who
@@ -261,7 +262,7 @@ Promote someone
 !demote [username]
 Demote someone
 
-!kickme
+!kkme
 Will kick user
 
 !about
@@ -302,10 +303,10 @@ create/revoke your group link
 !link
 returns group link
 
-!owner
+!own
 returns group owner id
 
-!setowner [id]
+!setgpowner [id]
 Will set id as owner
 
 !setflood [value]
