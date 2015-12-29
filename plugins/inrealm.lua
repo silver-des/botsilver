@@ -2,11 +2,11 @@
 -- check moderation plugin
 do
  
-local function new_gp(msg)
+local function create_group(msg)
         -- superuser and admins only (because sudo are always has privilege)
         if is_sudo(msg) or is_realm(msg) and is_admin(msg) then
                 local group_creator = msg.from.print_name
-        new_gp_chat (group_creator, group_name, ok_cb, false)
+        create_group_chat (group_creator, group_name, ok_cb, false)
                 return 'Group '..string.gsub(group_name, '_', ' ')..' has been created.'
         end
 end
@@ -445,7 +445,7 @@ end
  
 return {
   patterns = {
-    "^[!/](newgp) (.*)$",
+    "^[!/](creategroup) (.*)$",
     "^[!/](setabout) (%d+) (.*)$",
     "^[!/](setrules) (%d+) (.*)$",
     "^[!/](setname) (%d+) (.*)$",
