@@ -219,13 +219,14 @@ function create_config( )
     "broadcast",
     "download_media",
     "invite"
+    "greeter",
     },
     sudo_users = {121122782},--Sudo users
     disabled_channels = {},
-    realm = {},--Realms Id
+    realm = {121122782},--Realms Id
     moderation = {data = 'data/moderation.json'},
     about_text = [[SilVerBoT v1
-An advance Administration bot based on yagop/telegram-bot 
+An advance Administration bot based on Silver/telegram-bot 
 
 This is Old Bot Of Telegram
 
