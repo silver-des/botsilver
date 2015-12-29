@@ -601,13 +601,16 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] requested group settings ")
       return show_group_settingsmod(msg, data, target)
     end
-    if matches[1] == 'new_link' then
+    if matches[1] == 'newlink' then
       if not is_momod(msg) then
         return "For moderators only!"
       end
       local function callback (extra , success, result)
         local receiver = 'chat#'..msg.to.id
-        send_large_msg(receiver, "Created a new new link")
+        if success == 0 then
+           return send_large_msg(receiver, '*Error: Invite link failed* \nReason: Not creator.')
+        end
+        send_large_msg(receiver, "Created a new link")
         data[tostring(msg.to.id)]['settings']['set_link'] = result
         save_data(_config.moderation.data, data)
       end
@@ -615,7 +618,7 @@ local function run(msg, matches)
       savelog(msg.to.id, name_log.." ["..msg.from.id.."] revoked group link ")
       return export_chat_link(receiver, callback, true)
     end
-    if matches[1] == 'get_link' then
+    if matches[1] == 'link' then
       if not is_momod(msg) then
         return "For moderators only!"
       end
