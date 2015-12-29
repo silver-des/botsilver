@@ -222,7 +222,7 @@ function create_config( )
     },
     sudo_users = {121122782},--Sudo users
     disabled_channels = {},
-    realm = {121122782},--Realms Id
+    realm = {88298512},--Realms Id
     moderation = {data = 'data/moderation.json'},
     about_text = [[SilVerBoT v1
 An advance Administration bot based on Silver/telegram-bot 
