@@ -747,7 +747,7 @@ return {
   "^[!/](settings)$",
   "^[!/](modlist)$",
   "^[!/](newlink)$",
-  "^[!/](getlink)$",
+  "^[!/](link)$",
   "%[(photo)%]",
   "^!!tgservice (.+)$",
   },
