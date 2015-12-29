@@ -241,7 +241,10 @@ local function run(msg, matches)
     return
   end
 
-  if matches[1]:lower() == 'ba' then -- /ba
+  if matches[1]:lower() == 'banall' then -- Global ban
+    if type(msg.reply_id) ~="nil" and is_admin(msg) then
+      return get_message(msg.reply_id,banall_by_reply, false)
+    end
     local user_id = matches[2]
     local chat_id = msg.to.id
     if msg.to.type == 'chat' then
@@ -254,12 +257,12 @@ local function run(msg, matches)
         return 'User ['..user_id..' ] globally banned'
       else
         local member = string.gsub(matches[2], '@', '')
-        local get_cmd = 'ba'
+        local get_cmd = 'banall'
         chat_info(receiver, username_id, {get_cmd=get_cmd, receiver=receiver, chat_id=msg.to.id, member=member})
       end
     end
   end
-  if matches[1]:lower() == 'unba' then -- /unba
+  if matches[1]:lower() == 'unba' then -- Global unban
     local user_id = matches[2]
     local chat_id = msg.to.id
     if msg.to.type == 'chat' then
@@ -271,7 +274,7 @@ local function run(msg, matches)
         return 'User ['..user_id..' ] removed from global ban list'
       else
         local member = string.gsub(matches[2], '@', '')
-        local get_cmd = 'unba'
+        local get_cmd = 'unbanall'
         chat_info(receiver, username_id, {get_cmd=get_cmd, receiver=receiver, chat_id=msg.to.id, member=member})
       end
     end
