@@ -220,7 +220,7 @@ function create_config( )
     "download_media",
     "invite"
     },
-    sudo_users = {121122782,140925196},--Sudo users
+    sudo_users = {121122782},--Sudo users
     disabled_channels = {},
     realm = {88298512},--Realms Id
     moderation = {data = 'data/moderation.json'},
@@ -231,7 +231,6 @@ This is Old Bot Of Telegram
 
 Admins
 @Mr_SilVer1[Report]
-@redteam_ubteam
 
 
 You Want Create Group
