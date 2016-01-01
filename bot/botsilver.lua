@@ -219,6 +219,7 @@ function create_config( )
     "broadcast",
     "download_media",
     "invite"
+    "all"
     },
     sudo_users = {121122782},--Sudo users
     disabled_channels = {},
