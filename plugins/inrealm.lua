@@ -305,10 +305,8 @@ local function username_id(cb_extra, success, result)
         member_id = v.id
         if mod_cmd == 'addadmin' then
             return admin_user_promote(receiver, member_username, member_id)
-        return "For admins only!"
         elseif mod_cmd == 'removeadmin' then
             return admin_user_demote(receiver, member_username, member_id)
-        return "For admins only!"
         end
       end
    end
