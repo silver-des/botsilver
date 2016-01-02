@@ -305,8 +305,12 @@ local function username_id(cb_extra, success, result)
         member_id = v.id
         if mod_cmd == 'addadmin' then
             return admin_user_promote(receiver, member_username, member_id)
+            if not is_admin(msg) then
+        return "For admins only!"
         elseif mod_cmd == 'removeadmin' then
             return admin_user_demote(receiver, member_username, member_id)
+            if not is_admin(msg) then
+        return "For admins only!"
         end
       end
    end
@@ -412,6 +416,8 @@ chat_info(receiver, returnids, {receiver=receiver})
 			end
 		end
 		if matches[1] == 'addadmin' then
+			if not is_admin(msg) then
+        return "For admins only!"
 			if string.match(matches[2], '^%d+$') then
 				local admin_id = matches[2]
 				print("user "..admin_id.." has been promoted as admin")
@@ -423,6 +429,8 @@ chat_info(receiver, returnids, {receiver=receiver})
 			end
 		end
 		if matches[1] == 'removeadmin' then
+			if not is_admin(msg) then
+        return "For admins only!"
 			if string.match(matches[2], '^%d+$') then
 				local admin_id = matches[2]
 				print("user "..admin_id.." has been demoted")
